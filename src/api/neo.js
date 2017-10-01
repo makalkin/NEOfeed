@@ -1,7 +1,7 @@
 import client from './client';
 
 export const getNeoFeed = ({ startDate, endDate }) =>
-  client.get('https://api.nasa.gov/neo/rest/v1/feed?', {
+  client.get('neo/rest/v1/feed?', {
     params: {
       detailed: true,
       start_date: startDate.format('YYYY-MM-DD'),
