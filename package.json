@@ -2,7 +2,7 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://makalkin.github.io/NEOfeed/",
+  "homepage": "https://makalkin.github.io/NEOfeed",
   "dependencies": {
     "apollo-test-utils": "^0.3.2",
     "axios": "^0.16.2",
@@ -104,7 +104,8 @@
     "start": "node scripts/start.js",
     "build": "npm run eslint && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "test:coverage": "node scripts/test.js --env=jsdom --coverage --no-cache --runInBand",
+    "test:coverage":
+      "node scripts/test.js --env=jsdom --coverage --no-cache --runInBand",
     "start:prod": "serve -s build",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
@@ -124,13 +125,8 @@
       "src/services/**/*.{js,jsx}",
       "!src/components/stories/**/*.*"
     ],
-    "coverageReporters": [
-      "text",
-      "lcov"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
+    "coverageReporters": ["text", "lcov"],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
@@ -144,20 +140,14 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }
   },
   "babel": {
-    "plugins": [
-      "transform-decorators-legacy"
-    ],
-    "presets": [
-      "react-app"
-    ]
+    "plugins": ["transform-decorators-legacy"],
+    "presets": ["react-app"]
   },
   "storybook-deployer": {
     "gitUsername": "Vitalii Baitaliuk",
