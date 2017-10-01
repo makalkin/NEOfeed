@@ -1,0 +1,1 @@
+export { getNeoFeed } from './neo';
