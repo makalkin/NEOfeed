@@ -26,7 +26,7 @@ export function* neoRootSaga() {
   const { payload: { startDate } } = yield take(channel);
   yield call(fetchForWeek, startDate);
 
-  while (true) {
+  while (startDate) {
     // Tick
     yield call(wait, 5000);
 

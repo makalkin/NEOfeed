@@ -5,10 +5,6 @@ export class NeoService {
     this.setDays(days);
   }
 
-  get days() {
-    return this._days;
-  }
-
   isHazardous(day) {
     return _.includes(this.hazardousDays, day);
   }
@@ -38,17 +34,17 @@ export class NeoService {
       .value();
   }
 
-  _update = () => {
-    this.hazardousDays = _.chain(this._days)
+  update = () => {
+    this.hazardousDays = _.chain(this.days)
       .sortBy(day => NeoService.getPotentialHazardsForTheDay(day))
-      .slice(this._days.length - 2, this._days.length)
+      .slice(this.days.length - 2, this.days.length)
       .value();
   };
 
   setDays = (days) => {
-    this._days = days;
+    this.days = days;
 
-    this._update();
+    this.update();
   };
 
   static getPotentialHazardsForTheDay(day) {

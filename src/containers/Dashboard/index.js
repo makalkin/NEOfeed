@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Switch, Redirect, Link } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 
 import RouteWithSubRoutes from '../../components/RouteWithSubRoutes';
 import { routes } from './routes';

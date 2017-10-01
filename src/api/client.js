@@ -5,8 +5,9 @@
 
 import axios from 'axios';
 import Qs from 'qs';
+import _ from 'lodash';
+
 import { BASE_URL, MOCK_ENABLED, MOCK_URLS } from '../app.constants';
-// import { store } from '../app';
 
 const client = axios.create({
   baseURL: BASE_URL,

@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+
 import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 import { NeoActions } from '../../actions/neo';
