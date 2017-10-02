@@ -1,15 +1,11 @@
 import { actionChannel, call, put, select, take, fork } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 import _ from 'lodash';
 import moment from 'moment';
 
 import { NeoActions } from '../actions/neo';
 
 import { getNeoState } from '../selectors/neo';
-
-const wait = ms =>
-  new Promise((resolve) => {
-    setTimeout(() => resolve(ms), ms);
-  });
 
 export function* fetchForWeek(startDate) {
   yield put(
@@ -28,7 +24,7 @@ export function* neoRootSaga() {
 
   while (startDate) {
     // Tick
-    yield call(wait, 5000);
+    yield call(delay, 5000);
 
     const neoState = yield select(getNeoState);
     const { days, activeDays, dayToFetch } = neoState;
